@@ -1,0 +1,53 @@
+#toggle-false {
+    border: 3px solid white;
+    background-color: rgba(0,0,0,0);
+    border-radius: 149px;
+    width: 75px;
+    height: 30px;
+    transition: border-color 0.1s ease, border-bottom-color 0.2s ease;
+    cursor: pointer;
+    box-shadow: 1px 1px 10px rgba(0,0,0, 0.748);
+    position: relative;
+}
+
+#toggle-false .toggle-thumb
+{
+    height: 28px;
+    width: 28px;
+    background-color: white;
+    transition: background-color 0.2s ease;
+    border-radius: 149px;
+    transform: translateX(0);
+    transition: left 0.15s ease;
+    position: absolute;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#toggle-true {
+    background-color: rgba(0,0,0,0);
+    border: 3px solid black;
+    border-radius: 149px;
+    width: 75px;
+    height: 30px;
+    transition: border-color 0.1s ease, border-bottom-color 0.2s ease;
+    cursor: pointer;
+    box-shadow: 1px 1px 10px rgba(0,0,0, 0.748);
+    position: relative;
+}
+
+#toggle-true .toggle-thumb
+{
+    height: 28px;
+    width: 28px;
+    background-color: black;
+    transition: background-color 0.2s ease;
+    border-radius: 99px;
+    transform: translateX(0);
+    transition: left 0.15s ease;
+    position: absolute;
+    left: calc(75px - 35px);
+    top: 50%;
+    transform: translateY(-50%);
+}

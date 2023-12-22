@@ -1,38 +1,107 @@
+:root
+{
+  --background-color: #282828;
+  --foreground-color: #1e1e1e;
+  --main-text-color: white;
+  --subtext-color: #eae2e2;
+}
+
+[data-theme="light"]
+{
+  --background-color: #ede9da;
+  --foreground-color: #d9cbcb;
+  --main-text-color: black;
+  --subtext-color: #1e1e1e;
+
+}
+
 .App {
-  text-align: center;
+  text-align: left;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.listItem
+{
+  height: fit-content;
+  border-radius: 10px;
+  background-color: var(--foreground-color);
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.listItem .content
+{
+  overflow: hidden;
+  max-height: 0px;
+  transition: max-height 0.2s;
+}
+.listItem.dropped .content
+{
+  max-height: 40vh;
+  transition: max-height 0.2s;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.listItem .heading
+{
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 1vw;
 }
 
-.App-link {
-  color: #61dafb;
+.heading .dropped
+{
+  background-color: transparent;
+  border: none;
+
+  transform: rotateZ(180deg);
+  transition: transform ease 0.2s;
+}
+.heading .up
+{
+  background-color: transparent;
+  border: none;
+  transform: rotateZ(0deg);
+  transition: transform ease 0.2s;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.listItem img
+{
+  float: left;
+  paddingInline: 1vw;
+  height: 3rem;
+  margin-top: auto;
+  margin-bottom: auto;
 }
+
+body
+{
+  background-color: var(--background-color);
+}
+
+#content
+{
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+h1
+{
+  font-size: 4rem;
+}
+
+h2
+{
+  font-size: 3rem;
+}
+
+h1, h2, h3{
+  color: var(--main-text-color);
+}
+
+p{
+  color: var(--subtext-color);
+}
+
+
+
