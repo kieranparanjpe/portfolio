@@ -65,6 +65,13 @@
 
 }
 
+#socials
+{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
 .listItem img
 {
   float: left;

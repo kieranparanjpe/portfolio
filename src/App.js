@@ -10,6 +10,8 @@ import first from "./assets/first.png";
 import daedalos from "./assets/daedalos.png";
 import { IoMoonSharp } from "react-icons/io5";
 import { MdWbSunny } from "react-icons/md";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import {Parallax, ParallaxLayer} from "@react-spring/parallax";
 import {useState} from "react";
 import "./Toggle";
@@ -156,12 +158,11 @@ function App() {
 
   return (
     <div className="App">
-        <Parallax pages={5}>
+        <Parallax pages={3.1} color={"black"} style={{top: '0'}}>
             <ParallaxLayer factor={1.2} offset={0} speed={0.3} style={{
                 backgroundImage: `url(${darkMode ? spaceImage : blueSky})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'}}>
-
                 <div style={{textAlign: "right", marginRight: "10vw", marginTop: "10vh"}}>
                     <div style={{float: "right", paddingInline: "4px"}}><MdWbSunny size={"2em"} color={darkMode? "white":"black"}/></div>
                     <div style={{float: "right", paddingInline: "4px"}}><Toggle handleOnClick={toggleDarkMode}/></div>
@@ -200,7 +201,7 @@ function App() {
                 </div>
             </ParallaxLayer>
 
-            <ParallaxLayer factor={1} offset={1.2} speed={0.6}>
+            <ParallaxLayer factor={1} offset={1.1} speed={0.6}>
                 <div id={"content"}>
                     <h2>Previous Employment/Organisations</h2>
                     <div style={{marginLeft: "2vw"}}>
@@ -212,7 +213,7 @@ function App() {
                 </div>
             </ParallaxLayer>
 
-            <ParallaxLayer factor={3} offset={1.9} speed={0.6}>
+            <ParallaxLayer factor={3} offset={1.7} speed={0.6}>
                 <div id={"content"}>
                     <br/>
                     <h2>Projects</h2>
@@ -221,6 +222,20 @@ function App() {
                             <ListItem listObject={project} width={"60"} darkMode={darkMode} />
                         ))}
                     </div>
+                    <br/>
+                    <br/>
+                    <div id={"socials"}>
+                        <a id={"socials"} href={"https://www.github.com/kieranparanjpe"}>
+                            <FaGithub size={"3em"} color={darkMode? "white":"black"}/> 
+                            <p style={{paddingInline: "8px"}}>@kieranparanjpe</p>
+                        </a>
+                        <a id={"socials"} href={"https://www.linkedin.com/in/kieran-paranjpe/"} style={{paddingInline: "20px"}}>
+                            <FaLinkedin size={"3em"} color={darkMode? "white":"black"}/>
+                            <p style={{paddingInline: "8px"}}>@kieranparanjpe</p>
+                        </a>
+                    </div>
+                    <br/>
+                    <h3 style={{textAlign: "left"}}>Made by Kieran Paranjpe, 2023</h3>
                 </div>
             </ParallaxLayer>
         </Parallax>
