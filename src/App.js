@@ -147,7 +147,10 @@ const projects = [
     {title: "Bouncie", links: [{name: "Playstore", page: "https://play.google.com/store/apps/details?id=com.SharpCEntertainment.Bouncie&hl=en"}],
         shortDescription: "", date: "2018",
         longDescription: "2D endless scroller developed for mobile in Unity with C#.\n" +
-            "Implements Unity ads to generate revenue on the game."}
+            "Implements Unity ads to generate revenue on the game."},
+    {title: "Personal Website", links: [{name: "GitHub", page: "https://github.com/kieranparanjpe/portfolio/"}],
+        shortDescription: "This!", date: "2023",
+        longDescription: "Personal portfolio website made with React.js. \nImplements dark mode toggle, parallax effect and scroll animations."}
 ]
 
 function App() {
@@ -192,7 +195,7 @@ function App() {
                                style={{marginTop: "55vh"}}>About Me</motion.h2>
                     <br/>
                     <motion.div initial={{ translateY: "100%", opacity: "0%" }} whileInView={{ translateY: "0%", opacity: "100%" }}
-                                transition={{ease: "linear", duration: 0.4}} style={{marginLeft: "2vw", maxWidth: "576px", lineBreak: "auto"}}>
+                                transition={{ease: "linear", duration: 0.4}} style={{marginLeft: "2vw", maxWidth: "576px", lineBreak: "auto", fontSize: "1.1rem"}}>
                     <p>
                         Hey there and welcome to my website! My name is Kieran and I'm currently in my first year studying computer
                         science and AI at McGill university. I have a passion for programming, math and statistics. I am a FIRST
