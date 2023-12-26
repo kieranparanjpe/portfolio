@@ -12,11 +12,14 @@ import { IoMoonSharp } from "react-icons/io5";
 import { MdWbSunny } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {Parallax, ParallaxLayer} from "@react-spring/parallax";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import "./Toggle";
 import Toggle from "./Toggle";
 import ListItem from "./ListItem";
+import { motion } from "framer-motion"
 
 /** Employment Objects*/
 const Stemphilic = {title: "STEMphilic Education", icon: stemphilic, shortDescription: "Lead Robotics Camp Instructor", date: "2022-2023", longDescription: "Taught LEGO Spike Prime to students aged 5-13 at a spring and summer camp. Responsible for creating lesson plans to target a multitude of ages, teaching to a group and giving individual help."}
@@ -163,14 +166,16 @@ function App() {
                 backgroundImage: `url(${darkMode ? spaceImage : blueSky})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'}}>
-                <div style={{textAlign: "right", marginRight: "10vw", marginTop: "10vh"}}>
+                <motion.div initial={{ opacity: "0%" }} whileInView={{ opacity: "100%" }} transition={{ease: "linear", duration: 0.8}}
+                            style={{textAlign: "right", marginRight: "10vw", marginTop: "10vh"}}>
                     <div style={{float: "right", paddingInline: "4px"}}><MdWbSunny size={"2em"} color={darkMode? "white":"black"}/></div>
                     <div style={{float: "right", paddingInline: "4px"}}><Toggle handleOnClick={toggleDarkMode}/></div>
                     <div style={{float: "right", paddingInline: "4px"}}><IoMoonSharp size={"2em"} color={darkMode? "white":"black"}/></div>
-                </div>
+                </motion.div>
 
-                <div id={"content"}>
-                    <h1 style={{fontSize: "4rem",marginTop: "20vh"}}>Hi, <br/> I'm Kieran!</h1>
+                <div id={"content"} style={{display: "flex", alignItems: "end", justifyContent: "left", marginTop: "20vh"}}>
+                    <h1 style={{marginRight: "1rem"}}>{"Hi, \n I'm"}</h1>
+                    <motion.h1 initial={{ opacity: "0%" }} whileInView={{ opacity: "100%" }} transition={{ease: "linear", duration: 0.8}}> Kieran!</motion.h1>
                 </div>
             </ParallaxLayer>
             <ParallaxLayer factor={1.2} offset={0.4} speed={0.4} style={{
@@ -183,32 +188,38 @@ function App() {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'}}>
                 <div id={"content"}>
-                    <h2 style={{marginTop: "55vh"}}>About Me</h2>
+                    <motion.h2 initial={{ opacity: "0%" }} whileInView={{ opacity: "100%" }} transition={{ease: "linear", duration: 1.5}}
+                               style={{marginTop: "55vh"}}>About Me</motion.h2>
                     <br/>
-                    <div style={{marginLeft: "2vw", width: "576px", lineBreak: "auto"}}>
-                    <p>Hey there and welcome to my website! My name is Kieran and I'm currently in my first year studying computer
+                    <motion.div initial={{ translateY: "100%", opacity: "0%" }} whileInView={{ translateY: "0%", opacity: "100%" }}
+                                transition={{ease: "linear", duration: 0.4}} style={{marginLeft: "2vw", maxWidth: "576px", lineBreak: "auto"}}>
+                    <p>
+                        Hey there and welcome to my website! My name is Kieran and I'm currently in my first year studying computer
                         science and AI at McGill university. I have a passion for programming, math and statistics. I am a FIRST
                         alumni of two teams: FIRST Global Challenge team Canada 2022, and FIRST Tech Challenge Team 16267 where I
-                        was a captain for 3 years.</p>
-                        <br/>
-                        <p>I began my programming journey 9 years ago when I started tinkering in Scratch. Then, 7 years ago I
-                        taught myself C# in the context of Unity and since I have developed many games. More recently, I have been
-                        interested in programmatically generated art for which I use p5.js.</p>
-                        <br/>
-                        <p>I invite you to take a look at my GitHub, see any of my games uploaded to itch.io or just shoot me a message.
-                            I'd love to connect with you!</p>
-                    </div>
+                        was a captain for 3 years.
+                    </p>
+                    <br/>
+                    <p>I began my programming journey 9 years ago when I started tinkering in Scratch. Then, 7 years ago I
+                    taught myself C# in the context of Unity and since I have developed many games. More recently, I have been
+                    interested in programmatically generated art for which I use p5.js.
+                    </p>
+                    <br/>
+                    <p>I invite you to take a look at my GitHub, see any of my games uploaded to itch.io or just shoot me a message.
+                        I'd love to connect with you!
+                    </p>
+                    </motion.div>
                 </div>
             </ParallaxLayer>
 
             <ParallaxLayer factor={1} offset={1.1} speed={0.6}>
                 <div id={"content"}>
-                    <h2>Previous Employment/Organisations</h2>
+                    <motion.h2 initial={{opacity: "0%" }} whileInView={{opacity: "100%" }} transition={{ease: "linear", duration: 1.5}}>Previous</motion.h2>
                     <div style={{marginLeft: "2vw"}}>
-                        <ListItem listObject={Stemphilic} width={"60"} darkMode={darkMode} />
-                        <ListItem listObject={FTC} width={"60"} darkMode={darkMode} />
-                        <ListItem listObject={FGC} width={"60"} darkMode={darkMode} />
-                        <ListItem listObject={Daedalos} width={"60"} darkMode={darkMode} />
+                        <ListItem key={1} listObject={Stemphilic} width={"60"} darkMode={darkMode} />
+                        <ListItem key={2} listObject={FTC} width={"60"} darkMode={darkMode} />
+                        <ListItem key={3} listObject={FGC} width={"60"} darkMode={darkMode} />
+                        <ListItem key={4} listObject={Daedalos} width={"60"} darkMode={darkMode} />
                     </div>
                 </div>
             </ParallaxLayer>
@@ -216,10 +227,10 @@ function App() {
             <ParallaxLayer factor={3} offset={1.7} speed={0.6}>
                 <div id={"content"}>
                     <br/>
-                    <h2>Projects</h2>
+                    <motion.h2 initial={{opacity: "0%" }} whileInView={{opacity: "100%" }} transition={{ease: "linear", duration: 1.5}}>Projects</motion.h2>
                     <div style={{marginLeft: "2vw"}}>
-                        {projects.map((project) => (
-                            <ListItem listObject={project} width={"60"} darkMode={darkMode} />
+                        {projects.map((project, index) => (
+                            <ListItem key={index} listObject={project} width={"60"} darkMode={darkMode}/>
                         ))}
                     </div>
                     <br/>
