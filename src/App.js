@@ -15,11 +15,14 @@ import { FaLinkedin } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import {Parallax, ParallaxLayer} from "@react-spring/parallax";
-import {useEffect, useState} from "react";
+import {useEffect, useState, useRef} from "react";
 import "./Toggle";
 import Toggle from "./Toggle";
 import ListItem from "./ListItem";
 import { motion } from "framer-motion"
+import { FaPaperclip } from "react-icons/fa";
+import pfp from "./assets/pfp.png";
+
 
 /** Employment Objects*/
 const Stemphilic = {title: "STEMphilic Education", icon: stemphilic, shortDescription: "Lead Robotics Camp Instructor", date: "2022-2023", longDescription: "Taught LEGO Spike Prime to students aged 5-13 at a spring and summer camp. Responsible for creating lesson plans to target a multitude of ages, teaching to a group and giving individual help."}
@@ -164,7 +167,7 @@ function App() {
 
   return (
     <div className="App">
-        <Parallax pages={3.1} color={"black"} style={{top: '0'}}>
+        <Parallax pages={3.25} color={"black"} style={{top: '0'}}>
             <ParallaxLayer factor={1.2} offset={0} speed={0.3} style={{
                 backgroundImage: `url(${darkMode ? spaceImage : blueSky})`,
                 backgroundSize: 'cover',
@@ -178,7 +181,7 @@ function App() {
 
                 <div id={"content"} style={{display: "flex", alignItems: "end", justifyContent: "left", marginTop: "20vh"}}>
                     <h1 style={{marginRight: "1rem"}}>{"Hi, \n I'm"}</h1>
-                    <motion.h1 initial={{ opacity: "0%" }} whileInView={{ opacity: "100%" }} transition={{ease: "linear", duration: 0.8}}> Kieran!</motion.h1>
+                    <motion.h1 initial={{ opacity: "0%", color: darkMode? "#db3e3e":"#080140" }} whileInView={{ opacity: "100%", color: darkMode? "#db3e3e":"#080140"}} transition={{ease: "linear", duration: 0.8}}> Kieran!</motion.h1>
                 </div>
             </ParallaxLayer>
             <ParallaxLayer factor={1.2} offset={0.4} speed={0.4} style={{
@@ -191,31 +194,39 @@ function App() {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'}}>
                 <div id={"content"}>
+
                     <motion.h2 initial={{ opacity: "0%" }} whileInView={{ opacity: "100%" }} transition={{ease: "linear", duration: 1.5}}
                                style={{marginTop: "55vh"}}>About Me</motion.h2>
                     <br/>
-                    <motion.div initial={{ translateY: "100%", opacity: "0%" }} whileInView={{ translateY: "0%", opacity: "100%" }}
-                                transition={{ease: "linear", duration: 0.4}} style={{marginLeft: "2vw", maxWidth: "576px", lineBreak: "auto", fontSize: "1.1rem"}}>
-                    <p>
-                        Hey there and welcome to my website! My name is Kieran and I'm currently in my first year studying computer
-                        science and AI at McGill university. I have a passion for programming, math and statistics. I am a FIRST
-                        alumni of two teams: FIRST Global Challenge team Canada 2022, and FIRST Tech Challenge Team 16267 where I
-                        was a captain for 3 years.
-                    </p>
-                    <br/>
-                    <p>I began my programming journey 9 years ago when I started tinkering in Scratch. Then, 7 years ago I
-                    taught myself C# in the context of Unity and since I have developed many games. More recently, I have been
-                    interested in programmatically generated art for which I use p5.js.
-                    </p>
-                    <br/>
-                    <p>I invite you to take a look at my GitHub, see any of my games uploaded to itch.io or just shoot me a message.
-                        I'd love to connect with you!
-                    </p>
-                    </motion.div>
+                    <div className={"about"}>
+                        <motion.div initial={{ translateY: "100%", opacity: "0%" }} whileInView={{ translateY: "0%", opacity: "100%" }}
+                                    transition={{ease: "linear", duration: 0.4}} style={{marginLeft: "2vw", maxWidth: "576px", lineBreak: "auto", fontSize: "1.1rem"}}>
+                        <p>
+                            Hey there and welcome to my website! My name is Kieran and I'm currently in my first year studying computer
+                            science and AI at McGill university. I have a passion for programming, math and statistics. I am a FIRST
+                            alumni of two teams: FIRST Global Challenge team Canada 2022, and FIRST Tech Challenge Team 16267 where I
+                            was a captain for 3 years.
+                        </p>
+                        <br/>
+                        <p>I began my programming journey 9 years ago when I started tinkering in Scratch. Then, 7 years ago I
+                        taught myself C# in the context of Unity and since I have developed many games. More recently, I have been
+                        interested in programmatically generated art for which I use p5.js.
+                        </p>
+                        <br/>
+                        <p>I invite you to take a look at my GitHub, see any of my games uploaded to itch.io or just shoot me a message.
+                            I'd love to connect with you!
+                        </p>
+                        </motion.div>
+                        <div>
+                            <Socials darkMode={darkMode}/>
+                            <motion.img initial={{opacity: "0%" }} whileInView={{opacity: "100%" }} transition={{ease: "linear", duration: 0.4}}
+                                src={pfp}
+                             style={{margin: "5vh 1vw", borderRadius: "30%", maxWidth: "200px", borderStyle: "solid", borderColor: darkMode? "white" : "black"}}></motion.img>
+                        </div>
+                    </div>
                 </div>
-            </ParallaxLayer>
-
-            <ParallaxLayer factor={1} offset={1.1} speed={0.6}>
+                <br/>
+                <br/>
                 <div id={"content"}>
                     <motion.h2 initial={{opacity: "0%" }} whileInView={{opacity: "100%" }} transition={{ease: "linear", duration: 1.5}}>Previous</motion.h2>
                     <div style={{marginLeft: "2vw"}}>
@@ -225,9 +236,8 @@ function App() {
                         <ListItem key={4} listObject={Daedalos} width={"60"} darkMode={darkMode} />
                     </div>
                 </div>
-            </ParallaxLayer>
-
-            <ParallaxLayer factor={3} offset={1.7} speed={0.6}>
+                <br/>
+                <br/>
                 <div id={"content"}>
                     <br/>
                     <motion.h2 initial={{opacity: "0%" }} whileInView={{opacity: "100%" }} transition={{ease: "linear", duration: 1.5}}>Projects</motion.h2>
@@ -238,16 +248,7 @@ function App() {
                     </div>
                     <br/>
                     <br/>
-                    <div id={"socials"}>
-                        <a id={"socials"} href={"https://www.github.com/kieranparanjpe"}>
-                            <FaGithub size={"3em"} color={darkMode? "white":"black"}/> 
-                            <p style={{paddingInline: "8px"}}>@kieranparanjpe</p>
-                        </a>
-                        <a id={"socials"} href={"https://www.linkedin.com/in/kieran-paranjpe/"} style={{paddingInline: "20px"}}>
-                            <FaLinkedin size={"3em"} color={darkMode? "white":"black"}/>
-                            <p style={{paddingInline: "8px"}}>@kieranparanjpe</p>
-                        </a>
-                    </div>
+                    <Socials darkMode={darkMode}/>
                     <br/>
                     <h3 style={{textAlign: "left"}}>Made by Kieran Paranjpe, 2023</h3>
                 </div>
@@ -259,3 +260,25 @@ function App() {
 }
 
 export default App;
+
+const Socials = ({darkMode}) =>
+{
+    return (
+    <div id={"socials"}>
+        <motion.a initial={{translateY: "100%" }} whileInView={{translateY: "0%" }} transition={{ease: "linear", duration: 0.4}}
+                  href={"https://www.github.com/kieranparanjpe"}>
+            <FaGithub size={"3em"} color={darkMode? "white":"black"}/>
+            <p style={{paddingInline: "8px"}}>@kieranparanjpe</p>
+        </motion.a>
+        <motion.a  initial={{translateY: "100%" }} whileInView={{translateY: "0%" }} transition={{ease: "linear", duration: 0.4}}
+                   href={"https://www.linkedin.com/in/kieran-paranjpe/"}>
+            <FaLinkedin size={"3em"} color={darkMode? "white":"black"}/>
+            <p style={{paddingInline: "8px"}}>@kieranparanjpe</p>
+        </motion.a>
+        <motion.a initial={{translateY: "100%" }} whileInView={{translateY: "0%" }} transition={{ease: "linear", duration: 0.4}}
+                  href={"https://docs.google.com/document/d/1fW6aMsaX_jf4uo8YJYylJj3P95k4d4e3b5y2zs9gn6Y/edit?usp=sharing"}>
+            <FaPaperclip size={"3em"} color={darkMode? "white":"black"}/>
+            <p style={{paddingInline: "8px"}}>Resume</p>
+        </motion.a>
+    </div>)
+}
