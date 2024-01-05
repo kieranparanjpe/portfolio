@@ -2,7 +2,6 @@
 * {
   margin: 0;
   padding: 0;
-  white-space: pre-line;
 }
 
 body {
@@ -23,6 +22,8 @@ h1, h2, h3
 
 a, p{
   font-family: "Roboto", sans-serif;
+  white-space: pre-line;
+
 }
 
 code {

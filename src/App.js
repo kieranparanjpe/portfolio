@@ -14,12 +14,11 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import {Parallax, ParallaxLayer} from "@react-spring/parallax";
 import {useEffect, useState, useRef} from "react";
 import "./Toggle";
 import Toggle from "./Toggle";
 import ListItem from "./ListItem";
-import { motion } from "framer-motion"
+import {motion, useScroll, useTransform} from "framer-motion"
 import { FaPaperclip } from "react-icons/fa";
 import pfp from "./assets/pfp.png";
 
@@ -165,42 +164,69 @@ function App() {
     }
     const [darkMode, setDarkMode] = useState(true);
 
-  return (
+    let {scrollYProgress} = useScroll();
+    let scrollYA = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+    let scrollYB = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+    let scrollYC = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+
+
+    return (
     <div className="App">
-        <Parallax pages={3.25} color={"black"} style={{top: '0'}}>
-            <ParallaxLayer factor={1.2} offset={0} speed={0.3} style={{
-                backgroundImage: `url(${darkMode ? spaceImage : blueSky})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'}}>
-                <motion.div initial={{ opacity: "0%" }} whileInView={{ opacity: "100%" }} transition={{ease: "linear", duration: 0.8}}
-                            style={{textAlign: "right", marginRight: "10vw", marginTop: "10vh"}}>
-                    <div style={{float: "right", paddingInline: "4px"}}><MdWbSunny size={"2em"} color={darkMode? "white":"black"}/></div>
-                    <div style={{float: "right", paddingInline: "4px"}}><Toggle handleOnClick={toggleDarkMode}/></div>
-                    <div style={{float: "right", paddingInline: "4px"}}><IoMoonSharp size={"2em"} color={darkMode? "white":"black"}/></div>
-                </motion.div>
+        <motion.div style={{
+            translateY: scrollYA,
+            height: "120vh",
+            width: "100vw",
+            position: "absolute",
+            top: 0,
+            backgroundImage: `url(${darkMode ? spaceImage : blueSky})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            zIndex: "-3"}}>
+            <motion.div initial={{ opacity: "0%" }} whileInView={{ opacity: "100%" }} transition={{ease: "linear", duration: 0.8}}
+                        style={{textAlign: "right", marginRight: "10vw", marginTop: "10vh"}}>
+                <div style={{float: "right", paddingInline: "4px"}}><MdWbSunny size={"2em"} color={darkMode? "white":"black"}/></div>
+                <div style={{float: "right", paddingInline: "4px"}}><Toggle handleOnClick={toggleDarkMode}/></div>
+                <div style={{float: "right", paddingInline: "4px"}}><IoMoonSharp size={"2em"} color={darkMode? "white":"black"}/></div>
+            </motion.div>
 
-                <div id={"content"} style={{display: "flex", alignItems: "end", justifyContent: "left", marginTop: "20vh"}}>
-                    <h1 style={{marginRight: "1rem"}}>{"Hi, \n I'm"}</h1>
-                    <motion.h1 initial={{ opacity: "0%", color: darkMode? "#db3e3e":"#080140" }} whileInView={{ opacity: "100%", color: darkMode? "#db3e3e":"#080140"}} transition={{ease: "linear", duration: 0.8}}> Kieran!</motion.h1>
-                </div>
-            </ParallaxLayer>
-            <ParallaxLayer factor={1.2} offset={0.4} speed={0.4} style={{
-                backgroundImage: `url(${darkMode? midgroundNight : midgroundDay})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'}}>
-            </ParallaxLayer>
-            <ParallaxLayer factor={1.2} offset={0.55} speed={0.6} style={{
-                backgroundImage: `url(${darkMode? foregroundNight : foregroundDay})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'}}>
-                <div id={"content"}>
+            <div id={"content"} style={{display: "flex", alignItems: "end", justifyContent: "left", marginTop: "20vh"}}>
+                <h1 style={{marginRight: "1rem"}}>{"Hi, \n I'm"}</h1>
+                <motion.h1 initial={{ opacity: "0%", color: darkMode? "#db3e3e":"#080140" }} whileInView={{ opacity: "100%", color: darkMode? "#db3e3e":"#080140"}} transition={{ease: "linear", duration: 0.8}}> Kieran!</motion.h1>
+            </div>
+        </motion.div>
+        <motion.div style={{
+            translateY: scrollYB,
+            marginTop: "40vh",
+            backgroundImage: `url(${darkMode? midgroundNight : midgroundDay})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            height: "120vh",
+            width: "100vw",
+            position: "absolute",
+            top: "0px",
+            zIndex: "-2"}}>
+        </motion.div>
+        <motion.div style={{
+            translateY: scrollYC,
+            marginTop: "55vh",
+            backgroundImage: `url(${darkMode? foregroundNight : foregroundDay})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            height: "120vh",
+            width: "100vw",
+            position: "absolute",
+            top: "0px",
+            zIndex: "-1"}}>
+        </motion.div>
 
-                    <motion.h2 initial={{ opacity: "0%" }} whileInView={{ opacity: "100%" }} transition={{ease: "linear", duration: 1.5}}
-                               style={{marginTop: "55vh"}}>About Me</motion.h2>
-                    <br/>
-                    <div className={"about"}>
-                        <motion.div initial={{ translateY: "100%", opacity: "0%" }} whileInView={{ translateY: "0%", opacity: "100%" }}
-                                    transition={{ease: "linear", duration: 0.4}} style={{marginLeft: "2vw", maxWidth: "576px", lineBreak: "auto", fontSize: "1.1rem"}}>
+        <div style={{marginTop: "120vh", zIndex: "10"}}>
+            <div id={"content"}>
+                <motion.h2 initial={{ opacity: "0%" }} whileInView={{ opacity: "100%" }}
+                           transition={{ease: "linear", duration: 0.4}}>About Me</motion.h2>
+                <br/>
+                <div className={"about"}>
+                    <motion.div initial={{ translateY: "100%", opacity: "0%" }} whileInView={{ translateY: "0%", opacity: "100%" }}
+                                transition={{ease: "linear", duration: 0.4}} style={{marginLeft: "2vw", maxWidth: "576px", lineBreak: "auto", fontSize: "1.1rem"}}>
                         <p>
                             Hey there and welcome to my website! My name is Kieran and I'm currently in my first year studying computer
                             science and AI at McGill university. I have a passion for programming, math and statistics. I am a FIRST
@@ -209,52 +235,51 @@ function App() {
                         </p>
                         <br/>
                         <p>I began my programming journey 9 years ago when I started tinkering in Scratch. Then, 7 years ago I
-                        taught myself C# in the context of Unity and since I have developed many games. More recently, I have been
-                        interested in programmatically generated art for which I use p5.js.
+                            taught myself C# in the context of Unity and since I have developed many games. More recently, I have been
+                            interested in programmatically generated art for which I use p5.js.
                         </p>
                         <br/>
                         <p>I invite you to take a look at my GitHub, see any of my games uploaded to itch.io or just shoot me a message.
                             I'd love to connect with you!
                         </p>
-                        </motion.div>
-                        <div>
-                            <Socials darkMode={darkMode}/>
-                            <motion.img initial={{opacity: "0%" }} whileInView={{opacity: "100%" }} transition={{ease: "linear", duration: 0.4}}
-                                src={pfp}
-                             style={{margin: "5vh 1vw", borderRadius: "30%", maxWidth: "200px", borderStyle: "solid", borderColor: darkMode? "white" : "black"}}></motion.img>
-                        </div>
+                    </motion.div>
+                    <div>
+                        <Socials darkMode={darkMode}/>
+                        <motion.img initial={{opacity: "0%" }} whileInView={{opacity: "100%" }} transition={{ease: "linear", duration: 0.4}}
+                                    src={pfp}
+                                    style={{margin: "5vh 1vw", borderRadius: "30%", maxWidth: "200px", borderStyle: "solid", borderColor: darkMode? "white" : "black"}}></motion.img>
                     </div>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div id={"content"}>
+                <motion.h2 initial={{opacity: "0%" }} whileInView={{opacity: "100%" }} transition={{ease: "linear", duration: 1.5}}>Previous</motion.h2>
+                <div style={{marginLeft: "2vw"}}>
+                    <ListItem key={1} listObject={Stemphilic} width={"60"} darkMode={darkMode} />
+                    <ListItem key={2} listObject={FTC} width={"60"} darkMode={darkMode} />
+                    <ListItem key={3} listObject={FGC} width={"60"} darkMode={darkMode} />
+                    <ListItem key={4} listObject={Daedalos} width={"60"} darkMode={darkMode} />
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div id={"content"}>
+                <br/>
+                <motion.h2 initial={{opacity: "0%" }} whileInView={{opacity: "100%" }} transition={{ease: "linear", duration: 1.5}}>Projects</motion.h2>
+                <div style={{marginLeft: "2vw"}}>
+                    {projects.map((project, index) => (
+                        <ListItem key={index} listObject={project} width={"60"} darkMode={darkMode}/>
+                    ))}
                 </div>
                 <br/>
                 <br/>
-                <div id={"content"}>
-                    <motion.h2 initial={{opacity: "0%" }} whileInView={{opacity: "100%" }} transition={{ease: "linear", duration: 1.5}}>Previous</motion.h2>
-                    <div style={{marginLeft: "2vw"}}>
-                        <ListItem key={1} listObject={Stemphilic} width={"60"} darkMode={darkMode} />
-                        <ListItem key={2} listObject={FTC} width={"60"} darkMode={darkMode} />
-                        <ListItem key={3} listObject={FGC} width={"60"} darkMode={darkMode} />
-                        <ListItem key={4} listObject={Daedalos} width={"60"} darkMode={darkMode} />
-                    </div>
-                </div>
+                <Socials darkMode={darkMode}/>
                 <br/>
+                <h3 style={{textAlign: "left"}}>Made by Kieran Paranjpe, 2023</h3>
                 <br/>
-                <div id={"content"}>
-                    <br/>
-                    <motion.h2 initial={{opacity: "0%" }} whileInView={{opacity: "100%" }} transition={{ease: "linear", duration: 1.5}}>Projects</motion.h2>
-                    <div style={{marginLeft: "2vw"}}>
-                        {projects.map((project, index) => (
-                            <ListItem key={index} listObject={project} width={"60"} darkMode={darkMode}/>
-                        ))}
-                    </div>
-                    <br/>
-                    <br/>
-                    <Socials darkMode={darkMode}/>
-                    <br/>
-                    <h3 style={{textAlign: "left"}}>Made by Kieran Paranjpe, 2023</h3>
-                </div>
-            </ParallaxLayer>
-        </Parallax>
-
+            </div>
+        </div>
     </div>
   );
 }
