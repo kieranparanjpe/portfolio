@@ -40,11 +40,12 @@ const Daedalos = {title: "Daedalos Enrichment Programs", icon: daedalos, shortDe
 
 /** Projects */
 const projects = [
-    {title: "Spotify Stats", links: [{name: "GitHub", page: "https://github.com/kieranparanjpe/music-stats"},
-            {name: "Website", page: "https://music-stats-kieran-paranajpe.vercel.app/homepage"}], shortDescription: "Shows Spotify stats for given user", date: "2024",
-        longDescription: "React.js/Next.js web app that interfaces with the Spotify web API to display stats for a given Spotify user. \n" +
+    {title: "Spotify Song Download & Stats", links: [{name: "GitHub", page: "https://github.com/kieranparanjpe/music-stats"},
+            {name: "Website", page: "https://music-stats-kieran-paranajpe.vercel.app/homepage"}], shortDescription: "Allows users to see their Spotify stats and download their library.", date: "2024",
+        longDescription: "React.js/Next.js web app that interfaces with the Spotify web API and YouTube data API v3 to display stats for a given Spotify user and download mp3s of the user's songs. \n" +
             "Uses NextAuth to handle authentication for token refresh keys. \n" +
-            "Additionally, implements a custom algorithm to find a user's top genres because the Spotify API does not expose this information."},
+            "Implements a custom algorithm to find a user's top genres because the Spotify API does not expose this information.\n" +
+            "Uses the YouTube API to search for corresponding YouTube videos and then downloads an mp3 to allow user's to download their entire Spotify library."},
     {title: "Audio Visualiser", links: [{name: "GitHub", page: "https://github.com/kieranparanjpe/Audio-Visualisers"},
             {name: "Website", page: "https://audio-visualisers-b0876.web.app/"}], shortDescription: "Visualises Music with p5.js", date: "2023",
         longDescription: "Web app to visualise the audio currently playing out of a device’s speakers.\n" +
