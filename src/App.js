@@ -8,6 +8,7 @@ import midgroundNight from "./assets/midgroundNight.png";
 import stemphilic from "./assets/stemphilic.png";
 import first from "./assets/first.png";
 import daedalos from "./assets/daedalos.png";
+import resume from "./assets/Resume - Kieran Paranjpe - Public.pdf";
 import { IoMoonSharp } from "react-icons/io5";
 import { MdWbSunny } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
@@ -307,7 +308,7 @@ const Socials = ({darkMode}) =>
             <p style={{paddingInline: "8px"}}>@kieranparanjpe</p>
         </motion.a>
         <motion.a initial={{translateY: "100%" }} whileInView={{translateY: "0%" }} transition={{ease: "linear", duration: 0.4}}
-                  href={"https://docs.google.com/document/d/1fW6aMsaX_jf4uo8YJYylJj3P95k4d4e3b5y2zs9gn6Y/edit?usp=sharing"}>
+                  href={resume} download={'Kieran Paranjpe - Resume.pdf'}>
             <FaPaperclip size={"3em"} color={darkMode? "white":"black"}/>
             <p style={{paddingInline: "8px"}}>Resume</p>
         </motion.a>
