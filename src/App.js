@@ -41,6 +41,13 @@ const Daedalos = {title: "Daedalos Enrichment Programs", icon: daedalos, shortDe
 
 /** Projects */
 const projects = [
+    {title: "News Shorts", links: [{name: "GitHub", page: "https://github.com/anthonypoon12/ShortsNews"},
+            {name: "Devpost", page: "https://devpost.com/software/shortsnews"}], shortDescription: "Automatically generates YouTube Shorts based on news articles", date: "2024",
+        longDescription: "Shorts news is a python application that automatically generates YouTube shorts based on news articles. The goal of the project was to show the polarization of media by creating and uploading 2 shorts per article, one skewed left wing and one skewed right wing. We would then be able to see the difference in user engagement with each.\n" +
+            "\n" +
+            "We built this project using Python. We used Django (hosted with ngrok) to create an endpoint that receives requests through SMS using the Twilio API. This message received is used to find relevant current news articles using the NewsData.io API, which is stored in the SQLite database. We message the user, listing the options found, from which the user can choose by sending another message. We then use BeautifulSoup to web scrape the article and find relevant text that we summarize and skew to left-wing and right-wing biases using OpenAI's GPT-3.5. We then used the Giphy API to retrieve sets of mp4s, as well as Google Cloud text-to-speech (using our summarized) to get sets of mp3s to pair with them. We used the ffmpeg python library to manipulate and stitch the files together into our two final videos to be uploaded. We then used the Youtube API to automatically upload our videos to the internet.\n" +
+            "\n" +
+            "This was my first project using Python and it was a major learning experience."},
     {title: "Spotify Song Download & Stats", links: [{name: "GitHub", page: "https://github.com/kieranparanjpe/music-stats"},
             {name: "Website", page: "https://music-stats-kieran-paranajpe.vercel.app/homepage"}], shortDescription: "Allows users to see their Spotify stats and download their library.", date: "2024",
         longDescription: "React.js/Next.js web app that interfaces with the Spotify web API and YouTube data API v3 to display stats for a given Spotify user and download mp3s of the user's songs. \n" +
