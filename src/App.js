@@ -36,8 +36,7 @@ const FGC = {title: "FIRST Global Challenge Team Canada", icon: first, shortDesc
         "Programmed the logic of the robot for remote controlled use in Java and Android Studio.\n" +
         "Designed many key aspects of the competition robot including a drive train, linear slide, flywheel ball launcher and climbing winch using Fusion 360.\n" +
         "Taught and led LEGO robotics workshops for youth in the area."}
-const Daedalos = {title: "Daedalos Enrichment Programs", icon: daedalos, shortDescription: "Junior Lego Robotics Instructor", date: "2021", longDescription: "Assisted in teaching LEGO robotics (LEGO Mindstorms and LEGO WeDo) to students aged 5-13.Assisted in teaching LEGO robotics (LEGO Mindstorms and LEGO WeDo) to students aged 5-13." +
-        "\n"}
+const Daedalos = {title: "Daedalos Enrichment Programs", icon: daedalos, shortDescription: "Junior Lego Robotics Instructor", date: "2021", longDescription: "Assisted in teaching LEGO robotics (LEGO Mindstorms and LEGO WeDo) to students aged 5-13."}
 
 /** Projects */
 const projects = [
@@ -49,7 +48,7 @@ const projects = [
             "\n" +
             "This was my first project using Python and it was a major learning experience."},
     {title: "Spotify Song Download & Stats", links: [{name: "GitHub", page: "https://github.com/kieranparanjpe/music-stats"},
-            {name: "Website", page: "https://music-stats-kieran-paranajpe.vercel.app/homepage"}], shortDescription: "Allows users to see their Spotify stats and download their library.", date: "2024",
+            {name: "Website", page: "https://music-stats-kieran-paranajpe.vercel.app/homepage"}, {name: "Demo Video", page: "https://youtu.be/DVGmalxyGzU"}], shortDescription: "Allows users to see their Spotify stats and download their library.", date: "2024",
         longDescription: "React.js/Next.js web app that interfaces with the Spotify web API and YouTube data API v3 to display stats for a given Spotify user and download mp3s of the user's songs. \n" +
             "Uses NextAuth to handle authentication for token refresh keys. \n" +
             "Implements a custom algorithm to find a user's top genres because the Spotify API does not expose this information.\n" +
