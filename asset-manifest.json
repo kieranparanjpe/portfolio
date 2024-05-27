@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.c32e7103.css",
-    "main.js": "/portfolio/static/js/main.c902dab2.js",
-    "static/media/blueSky.png": "/portfolio/static/media/blueSky.8ff924ba9a6089087a1e.png",
-    "static/media/spaceImage.png": "/portfolio/static/media/spaceImage.d2a333ceeaeff19c6542.png",
-    "static/media/foregroundDay.png": "/portfolio/static/media/foregroundDay.076e33e41513a4a64609.png",
-    "static/media/foregroundNight.png": "/portfolio/static/media/foregroundNight.969c86b6bc3d5ab35925.png",
-    "static/media/midgroundNight.png": "/portfolio/static/media/midgroundNight.404e7ce1dc2c22d0a217.png",
-    "static/media/midgroundDay.png": "/portfolio/static/media/midgroundDay.ed9fee8e629ddfef4528.png",
-    "static/media/pfp.png": "/portfolio/static/media/pfp.6027e37d07767b884234.png",
-    "static/media/first.png": "/portfolio/static/media/first.5232f540b515babba394.png",
-    "static/media/stemphilic.png": "/portfolio/static/media/stemphilic.db252dbd3f6701207834.png",
-    "static/media/Resume - Kieran Paranjpe - Public.pdf": "/portfolio/static/media/Resume - Kieran Paranjpe - Public.d60d55e9502b845a34dd.pdf",
-    "index.html": "/portfolio/index.html",
-    "main.c32e7103.css.map": "/portfolio/static/css/main.c32e7103.css.map",
-    "main.c902dab2.js.map": "/portfolio/static/js/main.c902dab2.js.map"
+    "main.css": "/static/css/main.c32e7103.css",
+    "main.js": "/static/js/main.f18eed5d.js",
+    "static/media/blueSky.png": "/static/media/blueSky.8ff924ba9a6089087a1e.png",
+    "static/media/spaceImage.png": "/static/media/spaceImage.d2a333ceeaeff19c6542.png",
+    "static/media/foregroundDay.png": "/static/media/foregroundDay.076e33e41513a4a64609.png",
+    "static/media/foregroundNight.png": "/static/media/foregroundNight.969c86b6bc3d5ab35925.png",
+    "static/media/midgroundNight.png": "/static/media/midgroundNight.404e7ce1dc2c22d0a217.png",
+    "static/media/midgroundDay.png": "/static/media/midgroundDay.ed9fee8e629ddfef4528.png",
+    "static/media/pfp.png": "/static/media/pfp.6027e37d07767b884234.png",
+    "static/media/first.png": "/static/media/first.5232f540b515babba394.png",
+    "static/media/stemphilic.png": "/static/media/stemphilic.db252dbd3f6701207834.png",
+    "static/media/Resume - Kieran Paranjpe - Public.pdf": "/static/media/Resume - Kieran Paranjpe - Public.d60d55e9502b845a34dd.pdf",
+    "index.html": "/index.html",
+    "main.c32e7103.css.map": "/static/css/main.c32e7103.css.map",
+    "main.f18eed5d.js.map": "/static/js/main.f18eed5d.js.map"
   },
   "entrypoints": [
     "static/css/main.c32e7103.css",
-    "static/js/main.c902dab2.js"
+    "static/js/main.f18eed5d.js"
   ]
 }
