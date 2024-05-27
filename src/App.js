@@ -40,6 +40,16 @@ const Daedalos = {title: "Daedalos Enrichment Programs", icon: daedalos, shortDe
 
 /** Projects */
 const projects = [
+    {title: "URL Shortener", links: [{name: "GitHub", page: "https://github.com/kieranparanjpe/URL-Shortener"},
+            {name: "Website", page: "https://urlshortener.kieranparanjpe.com"}], shortDescription: "URL shortener that used Golang, PostgreSQL, Docker, Next.js, Typescript", date: "2024",
+        longDescription: `Made a fullstack url shortener with a Golang backend and a next.js frontend with Typescript.
+        Backend:
+        Uses Golang and PostgreSQL database to handle two key features: users and links.
+        Users can sign up with their email and are authenticated with JSON Web Tokens (JWT). They can then add links to be shortened. Links are stored in the database as a short link and a long link. When the short link API endpoint is accessed, it redirects to the long API endpoint.
+        The backend is containerised with Docker and is running on an AWS EC2 instance.
+        Frontend: 
+        Uses next.js with Typescript to serve a single page application to the end user. User can login/sign up and then add links that will be shortened. Employs Tailwind CSS for easy styling.
+        The frontend is deployed with Vercel.`},
     {title: "News Shorts", links: [{name: "GitHub", page: "https://github.com/anthonypoon12/ShortsNews"},
             {name: "Devpost", page: "https://devpost.com/software/shortsnews"}], shortDescription: "Automatically generates YouTube Shorts based on news articles", date: "2024",
         longDescription: "Shorts news is a python application that automatically generates YouTube shorts based on news articles. The goal of the project was to show the polarization of media by creating and uploading 2 shorts per article, one skewed left wing and one skewed right wing. We would then be able to see the difference in user engagement with each.\n" +
@@ -48,13 +58,13 @@ const projects = [
             "\n" +
             "This was my first project using Python and it was a major learning experience."},
     {title: "Spotify Song Download & Stats", links: [{name: "GitHub", page: "https://github.com/kieranparanjpe/music-stats"},
-            {name: "Website", page: "https://music-stats-kieran-paranajpe.vercel.app/homepage"}, {name: "Demo Video", page: "https://youtu.be/DVGmalxyGzU"}], shortDescription: "Allows users to see their Spotify stats and download their library.", date: "2024",
+            {name: "Website", page: "https://spotifystats.kieranparanjpe.com/"}, {name: "Demo Video", page: "https://youtu.be/DVGmalxyGzU"}], shortDescription: "Allows users to see their Spotify stats and download their library.", date: "2024",
         longDescription: "React.js/Next.js web app that interfaces with the Spotify web API and YouTube data API v3 to display stats for a given Spotify user and download mp3s of the user's songs. \n" +
             "Uses NextAuth to handle authentication for token refresh keys. \n" +
             "Implements a custom algorithm to find a user's top genres because the Spotify API does not expose this information.\n" +
             "Uses the YouTube API to search for corresponding YouTube videos and then downloads an mp3 to allow user's to download their entire Spotify library."},
     {title: "Audio Visualiser", links: [{name: "GitHub", page: "https://github.com/kieranparanjpe/Audio-Visualisers"},
-            {name: "Website", page: "https://audio-visualisers-b0876.web.app/"}], shortDescription: "Visualises Music with p5.js", date: "2023",
+            {name: "Website", page: "https://musicvisualiser.kieranparanjpe.com/"}], shortDescription: "Visualises Music with p5.js", date: "2023",
         longDescription: "Web app to visualise the audio currently playing out of a device’s speakers.\n" +
             "Developed using JavaScript (p5.js), HTML and CSS. \n" +
             "Uses the Spotify API to match the colour scheme of the visualiser to the album cover of the currently playing song by extracting a colour palette from the image.\n" +
