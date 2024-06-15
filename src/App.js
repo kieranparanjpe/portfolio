@@ -6,6 +6,7 @@ import blueSky from "./assets/blueSky.png";
 import foregroundNight from "./assets/foregroundNight.png";
 import midgroundNight from "./assets/midgroundNight.png";
 import stemphilic from "./assets/stemphilic.png";
+import verse from "./assets/verse.png"
 import first from "./assets/first.png";
 import daedalos from "./assets/daedalos.png";
 import resume from "./assets/Resume - Kieran Paranjpe - Public.pdf";
@@ -24,7 +25,14 @@ import { FaPaperclip } from "react-icons/fa";
 import pfp from "./assets/pfp.png";
 
 
+
 /** Employment Objects*/
+const TheVerse = {title: "The Verse", icon: verse, shortDescription: "Software Developer Intern", date: "2024", longDescription: "Developing a realtime breath detection library to overhaul the company’s current breath detection system using\n" +
+        "Python, PyTorch and OpenCV to support development of all ongoing breath games.\n" +
+        "Implemented a custom web-app to collect and automatically annotate audio data using JavaScript and p5.js to\n" +
+        "increase dataset size by 500% from 2000 samples to 10000 samples.\n" +
+        "Engineered a breath-mechanic game using Unity3D and C# to demonstrate how video games can be used for\n" +
+        "breathwork. Gave a presentation internally to 30 people to show the project’s viability."}
 const Stemphilic = {title: "STEMphilic Education", icon: stemphilic, shortDescription: "Lead Robotics Camp Instructor", date: "2022-2023", longDescription: "Taught LEGO Spike Prime to students aged 5-13 at a spring and summer camp. Responsible for creating lesson plans to target a multitude of ages, teaching to a group and giving individual help."}
 const FTC = {title: "FIRST Tech Challenge", icon: first, shortDescription: "Competitive Robotics Team Captain", date: "2019-2023", longDescription: "Captained FIRST Tech Challenge competitive robotics team 16267 Forces Unknown to a top 3 provincial finish two years in a row and to 1 world championship appearance. \n" +
         "Designed key components of the robot including drive trains, linear slides, mechanical claws and arms using Fusion 360.\n" +
@@ -40,6 +48,14 @@ const Daedalos = {title: "Daedalos Enrichment Programs", icon: daedalos, shortDe
 
 /** Projects */
 const projects = [
+    {title: "Custom Neural Network", links: [{name: "GitHub", page: "https://github.com/kieranparanjpe/MyNN"},], shortDescription: "Feedforward Neural Network made without any ML libraries", date: "2024",
+        longDescription: `I made a custom feed-forward deep neural network without any machine learning libraries - just Python and NumPy.
+
+The point of this project is to more holistically understand the libraries one would typically use when doing ML so that I can use them more effectively. 
+
+Currently it is trained on the MNIST digit dataset and after ~50 epochs of training it can classify the testing dataset with ~90 percent accuracy, which seems good enough for this project
+
+The model I used has 3 layers with more than 25,000 trainable parameters. It uses ReLU for the first two layers, and softmax for the final layer. I added support for batching and a custom data loader that can shuffle the samples which is loosely based on how Torch handles data loaders.`},
     {title: "URL Shortener", links: [{name: "GitHub", page: "https://github.com/kieranparanjpe/URL-Shortener"},
             {name: "Website", page: "https://urlshortener.kieranparanjpe.com"}], shortDescription: "URL shortener that used Golang, PostgreSQL, Docker, Next.js, Typescript", date: "2024",
         longDescription: `Made a fullstack url shortener with a Golang backend and a next.js frontend with Typescript.
@@ -277,8 +293,9 @@ function App() {
             <br/>
             <br/>
             <div id={"content"}>
-                <motion.h2 initial={{opacity: "0%" }} whileInView={{opacity: "100%" }} transition={{ease: "linear", duration: 1.5}}>Previous</motion.h2>
+                <motion.h2 initial={{opacity: "0%" }} whileInView={{opacity: "100%" }} transition={{ease: "linear", duration: 1.5}}>Experience</motion.h2>
                 <div style={{marginLeft: "2vw"}}>
+                    <ListItem key={0} listObject={TheVerse} width={"60"} darkMode={darkMode} />
                     <ListItem key={1} listObject={Stemphilic} width={"60"} darkMode={darkMode} />
                     <ListItem key={2} listObject={FTC} width={"60"} darkMode={darkMode} />
                     <ListItem key={3} listObject={FGC} width={"60"} darkMode={darkMode} />
