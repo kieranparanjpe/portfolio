@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c32e7103.css",
-    "main.js": "/static/js/main.bfff331e.js",
+    "main.js": "/static/js/main.27b0839c.js",
     "static/media/blueSky.png": "/static/media/blueSky.8ff924ba9a6089087a1e.png",
     "static/media/spaceImage.png": "/static/media/spaceImage.d2a333ceeaeff19c6542.png",
     "static/media/foregroundDay.png": "/static/media/foregroundDay.076e33e41513a4a64609.png",
@@ -14,10 +14,10 @@
     "static/media/Resume - Kieran Paranjpe - Public.pdf": "/static/media/Resume - Kieran Paranjpe - Public.d60d55e9502b845a34dd.pdf",
     "index.html": "/index.html",
     "main.c32e7103.css.map": "/static/css/main.c32e7103.css.map",
-    "main.bfff331e.js.map": "/static/js/main.bfff331e.js.map"
+    "main.27b0839c.js.map": "/static/js/main.27b0839c.js.map"
   },
   "entrypoints": [
     "static/css/main.c32e7103.css",
-    "static/js/main.bfff331e.js"
+    "static/js/main.27b0839c.js"
   ]
 }
