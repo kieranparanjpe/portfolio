@@ -27,12 +27,13 @@ import pfp from "./assets/pfp.png";
 
 
 /** Employment Objects*/
-const TheVerse = {title: "The Verse", icon: verse, shortDescription: "Software Developer Intern", date: "2024", longDescription: "Developing a realtime breath detection library to overhaul the company’s current breath detection system using\n" +
-        "Python, PyTorch and OpenCV to support development of all ongoing breath games.\n" +
-        "Implemented a custom web-app to collect and automatically annotate audio data using JavaScript and p5.js to\n" +
-        "increase dataset size by 500% from 2000 samples to 10000 samples.\n" +
-        "Engineered a breath-mechanic game using Unity3D and C# to demonstrate how video games can be used for\n" +
-        "breathwork. Gave a presentation internally to 30 people to show the project’s viability."}
+const TheVerse = {title: "The Verse", icon: verse, shortDescription: "Software Developer Intern", date: "2024", longDescription: "Developed a library designed to track breath rate in realtime using microphone input by training a neural\n" +
+        "network that takes mel spectrograms as input with PyTorch, achieving classification accuracy of 85%.\n" +
+        "Created an annotated breath audio dataset with over 50 minutes of breathing samples by implementing a web-app made with JavaScript and p5.js that records breath audio and uploads it to a Firebase storage bucket.\n" +
+        "Ported and optimised the PyTorch model to run in C# so it could be used in Unity, yielding a 5x speedup by\n" +
+        "converting the model to .ONNX, and analysing running time of specific functions using the Unity profiler.\n" +
+        "Reverse engineered PyTorch’s short time fourier transform, spectrogram, and mel spectrogram by stepping through Python source code with the debugger and reproducing functionality in C#.\n" +
+        "Directed development by leading meetings with other interns working on the breath library."}
 const Stemphilic = {title: "STEMphilic Education", icon: stemphilic, shortDescription: "Lead Robotics Camp Instructor", date: "2022-2023", longDescription: "Taught LEGO Spike Prime to students aged 5-13 at a spring and summer camp. Responsible for creating lesson plans to target a multitude of ages, teaching to a group and giving individual help."}
 const FTC = {title: "FIRST Tech Challenge", icon: first, shortDescription: "Competitive Robotics Team Captain", date: "2019-2023", longDescription: "Captained FIRST Tech Challenge competitive robotics team 16267 Forces Unknown to a top 3 provincial finish two years in a row and to 1 world championship appearance. \n" +
         "Designed key components of the robot including drive trains, linear slides, mechanical claws and arms using Fusion 360.\n" +
@@ -267,19 +268,13 @@ function App() {
                     <motion.div initial={{ translateY: "100%", opacity: "0%" }} whileInView={{ translateY: "0%", opacity: "100%" }}
                                 transition={{ease: "linear", duration: 0.4}} style={{marginLeft: "2vw", maxWidth: "576px", lineBreak: "auto", fontSize: "1.1rem"}}>
                         <p>
-                            Hey there and welcome to my website! My name is Kieran and I'm currently in my first year studying computer
-                            science and AI at McGill university. I have a passion for programming, math and statistics. I am a FIRST
-                            alumni of two teams: FIRST Global Challenge team Canada 2022, and FIRST Tech Challenge Team 16267 where I
-                            was a captain for 3 years.
+                            Welcome to my website! I'm Kieran, a computer science student at McGill University. With over 8 years of programming experience, I've explored many sectors, including full stack development, machine learning, game development and robotics.
                         </p>
                         <br/>
-                        <p>I began my programming journey 9 years ago when I started tinkering in Scratch. Then, 7 years ago I
-                            taught myself C# in the context of Unity and since I have developed many games. More recently, I have been
-                            interested in programmatically generated art for which I use p5.js.
+                        <p>I've been interested in coding since I was 11, when I started developing games in Unity with C#. I have developed over 15 projects with a variety of languages and frameworks, which you can find on my portfolio, GitHub, and itch.io. Last summer, I interned at The Verse, where I worked on training an audio classification model with PyTorch. I am also a FIRST Robotics alumni of two teams: FIRST Global Challenge team Canada 2022, and FIRST Tech Challenge Team 16267, where I was a captain for 3 years.
                         </p>
                         <br/>
-                        <p>I invite you to take a look at my GitHub, see any of my games uploaded to itch.io or just shoot me a message.
-                            I'd love to connect with you!
+                        <p>I'm currently looking for a software internship for winter or summer 2025, where I can apply my skills and learn from professionals. I'm eager to work on challenging and meaningful projects that can make a positive impact. Thank you for visiting my website, and feel free to contact me if you have any questions or you just want to chat.
                         </p>
                     </motion.div>
                     <div>
