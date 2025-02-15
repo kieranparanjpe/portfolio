@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c32e7103.css",
-    "main.js": "/static/js/main.3d2c8cf8.js",
+    "main.css": "/static/css/main.e0560027.css",
+    "main.js": "/static/js/main.13117e65.js",
     "static/media/blueSky.png": "/static/media/blueSky.8ff924ba9a6089087a1e.png",
     "static/media/spaceImage.png": "/static/media/spaceImage.d2a333ceeaeff19c6542.png",
     "static/media/foregroundDay.png": "/static/media/foregroundDay.076e33e41513a4a64609.png",
@@ -10,15 +10,16 @@
     "static/media/midgroundNight.png": "/static/media/midgroundNight.404e7ce1dc2c22d0a217.png",
     "static/media/midgroundDay.png": "/static/media/midgroundDay.ed9fee8e629ddfef4528.png",
     "static/media/pfp.png": "/static/media/pfp.6027e37d07767b884234.png",
-    "static/media/Resume - Kieran Paranjpe - Public.pdf": "/static/media/Resume - Kieran Paranjpe - Public.0717f8a19e4549c936b0.pdf",
+    "static/media/Resume - Kieran Paranjpe - Public.pdf": "/static/media/Resume - Kieran Paranjpe - Public.a6eb45d0647538c060f1.pdf",
     "static/media/first.png": "/static/media/first.5232f540b515babba394.png",
     "static/media/stemphilic.png": "/static/media/stemphilic.db252dbd3f6701207834.png",
+    "static/media/autodeskLogo.png": "/static/media/autodeskLogo.b1d134a993996130f31f.png",
     "index.html": "/index.html",
-    "main.c32e7103.css.map": "/static/css/main.c32e7103.css.map",
-    "main.3d2c8cf8.js.map": "/static/js/main.3d2c8cf8.js.map"
+    "main.e0560027.css.map": "/static/css/main.e0560027.css.map",
+    "main.13117e65.js.map": "/static/js/main.13117e65.js.map"
   },
   "entrypoints": [
-    "static/css/main.c32e7103.css",
-    "static/js/main.3d2c8cf8.js"
+    "static/css/main.e0560027.css",
+    "static/js/main.13117e65.js"
   ]
 }
