@@ -6,7 +6,8 @@ import blueSky from "./assets/blueSky.png";
 import foregroundNight from "./assets/foregroundNight.png";
 import midgroundNight from "./assets/midgroundNight.png";
 import stemphilic from "./assets/stemphilic.png";
-import verse from "./assets/verse.png"
+import verse from "./assets/verse.png";
+import autodeskLogo from "./assets/autodeskLogo.png";
 import first from "./assets/first.png";
 import daedalos from "./assets/daedalos.png";
 import resume from "./assets/Resume - Kieran Paranjpe - Public.pdf";
@@ -27,6 +28,12 @@ import pfp from "./assets/pfp.png";
 
 
 /** Employment Objects*/
+const Autodesk = {title: "Autodesk", icon: autodeskLogo, shortDescription: "Software Developer Intern", date: "2025",
+    longDescription: `Working on Platform Services to deliver cloud solutions for Autodesk products in architecture, media and design.
+Implemented a cycle detection algorithm to ensure batches of commands can be topologically sorted by combining depth first
+search and a greedy solution to the ’hitting set problem’, resulting in ∼30% fewer commands generated and a 10% speedup.
+Optimised a PATCH request in a Command Query Responsibility Separation (CQRS) system by analyzing polling operations and
+removing an unnecessary API request, resulting in a 250ms speedup per operation.`}
 const TheVerse = {title: "The Verse", icon: verse, shortDescription: "Software Developer Intern", date: "2024", longDescription: "Developed a library designed to track breath rate in realtime using microphone input by training a neural\n" +
         "network that takes mel spectrograms as input with PyTorch, achieving classification accuracy of 85%.\n" +
         "Created an annotated breath audio dataset with over 50 minutes of breathing samples by implementing a web-app made with JavaScript and p5.js that records breath audio and uploads it to a Firebase storage bucket.\n" +
@@ -231,7 +238,7 @@ function App() {
 
             <div id={"content"} style={{display: "flex", alignItems: "end", justifyContent: "left", marginTop: "20vh"}}>
                 <h1 style={{marginRight: "1rem"}}>{"Hi, \n I'm"}</h1>
-                <motion.h1 initial={{ opacity: "0%", color: darkMode? "#db3e3e":"#080140" }} whileInView={{ opacity: "100%", color: darkMode? "#db3e3e":"#080140"}} transition={{ease: "linear", duration: 0.8}}> Kieran!</motion.h1>
+                <motion.h1 initial={{ opacity: "0%", color: darkMode? "#db3e3e":"#080140" }} whileInView={{ opacity: "100%", color: darkMode? "#db3e3e":"#014513"}} transition={{ease: "linear", duration: 0.8}}> Kieran🙂</motion.h1>
             </div>
         </motion.div>
         <motion.div style={{
@@ -264,32 +271,42 @@ function App() {
                 <motion.h2 initial={{ opacity: "0%" }} whileInView={{ opacity: "100%" }}
                            transition={{ease: "linear", duration: 0.4}}>About Me</motion.h2>
                 <br/>
-                <div className={"about"}>
-                    <motion.div initial={{ translateY: "100%", opacity: "0%" }} whileInView={{ translateY: "0%", opacity: "100%" }}
-                                transition={{ease: "linear", duration: 0.4}} style={{marginLeft: "2vw", maxWidth: "576px", lineBreak: "auto", fontSize: "1.1rem"}}>
-                        <p>
-                            Welcome to my website! I'm Kieran, a computer science student at McGill University. With over 8 years of programming experience, I've explored many sectors, including full stack development, machine learning, game development and robotics.
-                        </p>
+                <motion.div initial={{ translateY: "100%", opacity: "0%" }} whileInView={{ translateY: "0%", opacity: "100%" }}
+                                transition={{ease: "linear", duration: 0.4}} style={{marginLeft: "2vw", maxWidth: "900px", lineBreak: "auto", fontSize: "1.1rem"}}>
+
+                        <p>Welcome to my portfolio website. I'm Kieran, and I think you should scroll up and click the dark mode toggle.</p>
                         <br/>
-                        <p>I've been interested in coding since I was 11, when I started developing games in Unity with C#. I have developed over 15 projects with a variety of languages and frameworks, which you can find on my portfolio, GitHub, and itch.io. Last summer, I interned at The Verse, where I worked on training an audio classification model with PyTorch. I am also a FIRST Robotics alumni of two teams: FIRST Global Challenge team Canada 2022, and FIRST Tech Challenge Team 16267, where I was a captain for 3 years.
-                        </p>
+                        <p>Now you're back. I study CS at McGill but I'm taking the semester off to intern with Autodesk.</p>
                         <br/>
-                        <p>I'm currently looking for a software internship for winter or summer 2025, where I can apply my skills and learn from professionals. I'm eager to work on challenging and meaningful projects that can make a positive impact. Thank you for visiting my website, and feel free to contact me if you have any questions or you just want to chat.
-                        </p>
+                        <p>I made this website because I thought it would increase my chances of getting a job... I did not get any jobs from my website.</p>
+                        <br/>
+                        <p>If you're hiring for a software internship summer 2025 and reading this you should consider reaching out to me and interviewing me (I promise I leetcode)</p>
+                        <br/>
+
+                        <p>me: </p>
+                        <ul style={{marginLeft: "1vw"}}>
+                            <li>8.5 years OOP experience. (I started doing Unity C# at 11). </li>
+                            <li>Internship experience with ML, specific for audio (PyTorch) </li>
+                            <li>Internship experience with fullstack development (TypeScript and Java Springboot) </li>
+                            <li>Robotics experience from highschool (FIRST robotics)</li>
+                            <li>I'm interested in pretty much all software problems (just not frontend). I just like a good problem.</li>
+                        </ul>
+
                     </motion.div>
-                    <div>
-                        <Socials darkMode={darkMode}/>
-                        <motion.img initial={{opacity: "0%" }} whileInView={{opacity: "100%" }} transition={{ease: "linear", duration: 0.4}}
-                                    src={pfp}
-                                    style={{margin: "5vh 1vw", borderRadius: "30%", maxWidth: "200px", borderStyle: "solid", borderColor: darkMode? "white" : "black"}}></motion.img>
-                    </div>
-                </div>
+                <br/>
+                <br/>
+                <Socials darkMode={darkMode}/>
+                
+                {/* <motion.img initial={{opacity: "0%" }} whileInView={{opacity: "100%" }} transition={{ease: "linear", duration: 0.4}}
+                            src={pfp}
+                            style={{margin: "5vh 1vw", borderRadius: "30%", maxWidth: "200px", borderStyle: "solid", borderColor: darkMode? "white" : "black"}}></motion.img> */}
             </div>
             <br/>
             <br/>
             <div id={"content"}>
                 <motion.h2 initial={{opacity: "0%" }} whileInView={{opacity: "100%" }} transition={{ease: "linear", duration: 1.5}}>Experience</motion.h2>
                 <div style={{marginLeft: "2vw"}}>
+                    <ListItem key={0} listObject={Autodesk} width={"60"} darkMode={darkMode} />
                     <ListItem key={0} listObject={TheVerse} width={"60"} darkMode={darkMode} />
                     <ListItem key={1} listObject={Stemphilic} width={"60"} darkMode={darkMode} />
                     <ListItem key={2} listObject={FTC} width={"60"} darkMode={darkMode} />
@@ -311,7 +328,7 @@ function App() {
                 <br/>
                 <Socials darkMode={darkMode}/>
                 <br/>
-                <h3 style={{textAlign: "left"}}>Made by Kieran Paranjpe, 2023</h3>
+                <h3 style={{textAlign: "left"}}>Made by Kieran Paranjpe, 2025</h3>
                 <br/>
             </div>
         </div>

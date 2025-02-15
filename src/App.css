@@ -1,6 +1,6 @@
 :root
 {
-  --background-color: #282828;
+  --background-color: #2b2b2b;
   --foreground-color: #1e1e1e;
   --main-text-color: white;
   --subtext-color: #eae2e2;
@@ -120,7 +120,7 @@ h1, h2, h3{
   color: var(--main-text-color);
 }
 
-p{
+p, ul, li{
   color: var(--subtext-color);
 }
 
