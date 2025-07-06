@@ -29,11 +29,17 @@ import pfp from "./assets/pfp.png";
 
 /** Employment Objects*/
 const Autodesk = {title: "Autodesk", icon: autodeskLogo, shortDescription: "Software Developer Intern", date: "2025",
-    longDescription: `Working on Platform Services to deliver cloud solutions for Autodesk products in architecture, media and design.
-Implemented a cycle detection algorithm to ensure batches of commands can be topologically sorted by combining depth first
-search and a greedy solution to the ’hitting set problem’, resulting in ∼30% fewer commands generated and a 10% speedup.
-Optimised a PATCH request in a Command Query Responsibility Separation (CQRS) system by analyzing polling operations and
-removing an unnecessary API request, resulting in a 250ms speedup per operation.`}
+    longDescription: `Implemented a cycle detection algorithm to ensure batches of commands can be topologically sorted by combining depth first
+search and a greedy solution to the ’hitting set problem’, resulting in 30% fewer commands generated and a 20% speedup.
+Implemented a REST client for search by creating data models and handling errors, achieving 100% test coverage.
+Added polymorphic-type filter support for search by calling our Types REST API to expand a single RSQL operator into multiple
+RSQL operators, maintaining 100% test coverage.
+Created an end-to-end deploy test suite for the search service containing over 50 tests to run locally and in Jenkins by syncing
+test data between local and staging, managing run-time SQL injection and writing parameterised JUnit tests.
+Configured a new Nginx Docker container as a reverse proxy for routing in local search tests.
+Contributed to critical search features (listed above), shipped in 5 client deliverables over 4 months.
+Debugged an issue where purged data was returned to clients by tracing Splunk logs as part of my duties on support.
+Added support for force purging data on the client and server by introducing a flag, resulting in a 400% performance increase.`}
 const TheVerse = {title: "The Verse", icon: verse, shortDescription: "Software Developer Intern", date: "2024", longDescription: "Developed a library designed to track breath rate in realtime using microphone input by training a neural\n" +
         "network that takes mel spectrograms as input with PyTorch, achieving classification accuracy of 85%.\n" +
         "Created an annotated breath audio dataset with over 50 minutes of breathing samples by implementing a web-app made with JavaScript and p5.js that records breath audio and uploads it to a Firebase storage bucket.\n" +
