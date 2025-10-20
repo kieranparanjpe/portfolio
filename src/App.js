@@ -282,19 +282,17 @@ function App() {
 
                         <p>Welcome to my portfolio website. I'm Kieran, and I think you should scroll up and click the dark mode toggle.</p>
                         <br/>
-                        <p>Now you're back. I study CS at McGill but I'm taking the semester off to intern with Autodesk.</p>
+                        <p>I'm in my third year of a Computer Science degree at McGill.</p>
                         <br/>
-                        <p>I made this website because I thought it would increase my chances of getting a job... I did not get any jobs from my website.</p>
-                        <br/>
-                        <p>If you're hiring for a software internship summer 2025 and reading this you should consider reaching out to me and interviewing me (I promise I leetcode)</p>
+                        <p>My interests include machine learning and applications of machine learning to robotics.</p>
                         <br/>
 
-                        <p>me: </p>
+                        <p>My experience in short: </p>
                         <ul style={{marginLeft: "1vw"}}>
-                            <li>8.5 years OOP experience. (I started doing Unity C# at 11). </li>
+                            <li>9 years OOP experience. (I started doing Unity C# at 11). </li>
                             <li>Internship experience with ML, specific for audio (PyTorch) </li>
                             <li>Internship experience with fullstack development (TypeScript and Java Springboot) </li>
-                            <li>Robotics experience from highschool (FIRST robotics)</li>
+                            <li>Robotics experience from high school (FIRST robotics)</li>
                             <li>I'm interested in pretty much all software problems (just not frontend). I just like a good problem.</li>
                         </ul>
 
