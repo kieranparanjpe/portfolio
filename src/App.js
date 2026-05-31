@@ -43,7 +43,7 @@ Configured a new Nginx Docker container as a reverse proxy for routing in local 
 Contributed to critical search features (listed above), shipped in 5 client deliverables over 4 months.
 Debugged an issue where purged data was returned to clients by tracing Splunk logs as part of my duties on support.
 Added support for force purging data on the client and server by introducing a flag, resulting in a 400% performance increase.`}
-const TheVerse = {title: "The Verse", icon: verse, shortDescription: "ML: Intern", date: "2024", longDescription: "Developed a library designed to track breath rate in realtime using microphone input by training a neural\n" +
+const TheVerse = {title: "The Verse", icon: verse, shortDescription: "ML Intern", date: "2024", longDescription: "Developed a library designed to track breath rate in realtime using microphone input by training a neural\n" +
         "network that takes mel spectrograms as input with PyTorch, achieving classification accuracy of 85%.\n" +
         "Created an annotated breath audio dataset with over 50 minutes of breathing samples by implementing a web-app made with JavaScript and p5.js that records breath audio and uploads it to a Firebase storage bucket.\n" +
         "Ported and optimised the PyTorch model to run in C# so it could be used in Unity, yielding a 5x speedup by\n" +
