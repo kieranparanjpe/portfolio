@@ -28,7 +28,10 @@ import pfp from "./assets/pfp.png";
 
 
 /** Employment Objects*/
-const Autodesk = {title: "Autodesk", icon: autodeskLogo, shortDescription: "Software Developer Intern", date: "2025",
+const Autodesk2 = {title: "Autodesk", icon: autodeskLogo, shortDescription: "Software Developer Intern", date: "2026",
+    longDescription: `Working on MCP tooling.`}
+
+const Autodesk1 = {title: "Autodesk", icon: autodeskLogo, shortDescription: "Software Developer Intern", date: "2025",
     longDescription: `Implemented a cycle detection algorithm to ensure batches of commands can be topologically sorted by combining depth first
 search and a greedy solution to the ’hitting set problem’, resulting in 30% fewer commands generated and a 20% speedup.
 Implemented a REST client for search by creating data models and handling errors, achieving 100% test coverage.
@@ -40,7 +43,7 @@ Configured a new Nginx Docker container as a reverse proxy for routing in local 
 Contributed to critical search features (listed above), shipped in 5 client deliverables over 4 months.
 Debugged an issue where purged data was returned to clients by tracing Splunk logs as part of my duties on support.
 Added support for force purging data on the client and server by introducing a flag, resulting in a 400% performance increase.`}
-const TheVerse = {title: "The Verse", icon: verse, shortDescription: "Software Developer Intern", date: "2024", longDescription: "Developed a library designed to track breath rate in realtime using microphone input by training a neural\n" +
+const TheVerse = {title: "The Verse", icon: verse, shortDescription: "ML: Intern", date: "2024", longDescription: "Developed a library designed to track breath rate in realtime using microphone input by training a neural\n" +
         "network that takes mel spectrograms as input with PyTorch, achieving classification accuracy of 85%.\n" +
         "Created an annotated breath audio dataset with over 50 minutes of breathing samples by implementing a web-app made with JavaScript and p5.js that records breath audio and uploads it to a Firebase storage bucket.\n" +
         "Ported and optimised the PyTorch model to run in C# so it could be used in Unity, yielding a 5x speedup by\n" +
@@ -280,20 +283,20 @@ function App() {
                 <motion.div initial={{ translateY: "100%", opacity: "0%" }} whileInView={{ translateY: "0%", opacity: "100%" }}
                                 transition={{ease: "linear", duration: 0.4}} style={{marginLeft: "2vw", maxWidth: "900px", lineBreak: "auto", fontSize: "1.1rem"}}>
 
-                        <p>Welcome to my portfolio website. I'm Kieran, and I think you should scroll up and click the dark mode toggle.</p>
+                        <p>Hi, I'm Kieran.</p>
                         <br/>
-                        <p>I'm in my third year of a Computer Science degree at McGill.</p>
+                        <p>I study computer science at McGill with an expected graduation date of December 2027.</p>
                         <br/>
-                        <p>My interests include machine learning and applications of machine learning to robotics.</p>
+                        <p>I'm interested in machine learning as it pertains to robotics, especially reinforcement learning.</p>
                         <br/>
 
                         <p>My experience in short: </p>
                         <ul style={{marginLeft: "1vw"}}>
-                            <li>9 years OOP experience. (I started doing Unity C# at 11). </li>
-                            <li>Internship experience with ML, specific for audio (PyTorch) </li>
-                            <li>Internship experience with fullstack development (TypeScript and Java Springboot) </li>
-                            <li>Robotics experience from high school (FIRST robotics)</li>
-                            <li>I'm interested in pretty much all software problems (just not frontend). I just like a good problem.</li>
+                            <li>ML internship @ The Verse. Trained realtime audio classification model. (PyTorch) </li>
+                            <li>Backend internship @ Autodesk. Implemented features for search. (Java, TypeScript) </li>
+                            <li>Backend/AI internship @ Autodesk. Bringing MCP and agentic AI to media and entertainment products. (Python) </li>
+                            <li>Designed and programmed robots in high school with FIRST robotics. (CAD, Java)</li>
+                            <li>And many personal projects in various domains (game dev, fullstack, ML) spanning the last 10 years.</li>
                         </ul>
 
                     </motion.div>
@@ -310,7 +313,8 @@ function App() {
             <div id={"content"}>
                 <motion.h2 initial={{opacity: "0%" }} whileInView={{opacity: "100%" }} transition={{ease: "linear", duration: 1.5}}>Experience</motion.h2>
                 <div style={{marginLeft: "2vw"}}>
-                    <ListItem key={0} listObject={Autodesk} width={"60"} darkMode={darkMode} />
+                    <ListItem key={0} listObject={Autodesk2} width={"60"} darkMode={darkMode} />
+                    <ListItem key={0} listObject={Autodesk1} width={"60"} darkMode={darkMode} />
                     <ListItem key={0} listObject={TheVerse} width={"60"} darkMode={darkMode} />
                     <ListItem key={1} listObject={Stemphilic} width={"60"} darkMode={darkMode} />
                     <ListItem key={2} listObject={FTC} width={"60"} darkMode={darkMode} />
@@ -332,7 +336,7 @@ function App() {
                 <br/>
                 <Socials darkMode={darkMode}/>
                 <br/>
-                <h3 style={{textAlign: "left"}}>Made by Kieran Paranjpe, 2025</h3>
+                <h3 style={{textAlign: "left"}}>Made by Kieran Paranjpe, 2026</h3>
                 <br/>
             </div>
         </div>
@@ -356,10 +360,6 @@ const Socials = ({darkMode}) =>
             <FaLinkedin size={"3em"} color={darkMode? "white":"black"}/>
             <p style={{paddingInline: "8px"}}>@kieranparanjpe</p>
         </motion.a>
-        <motion.a initial={{translateY: "100%" }} whileInView={{translateY: "0%" }} transition={{ease: "linear", duration: 0.4}}
-                  href={resume} download={'Kieran Paranjpe - Resume.pdf'}>
-            <FaPaperclip size={"3em"} color={darkMode? "white":"black"}/>
-            <p style={{paddingInline: "8px"}}>Resume</p>
-        </motion.a>
+
     </div>)
 }
