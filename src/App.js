@@ -29,7 +29,11 @@ import pfp from "./assets/pfp.png";
 
 /** Employment Objects*/
 const Autodesk2 = {title: "Autodesk", icon: autodeskLogo, shortDescription: "Software Developer Intern", date: "2026",
-    longDescription: `Working on MCP tooling.`}
+    longDescription: `Delivered the MEDM MCP server, an entirely new service, and deployed it to production.
+Implemented over 25 new MCP tools, allowing users to create, read, search, and update their live data through a chat interface.
+Developed a local MCP server that runs in the frontend application so the LLM can interact natively with UI.
+Integrated the MCP server with the AI assistant, accessible via a chat window in our Asset Management frontend.
+Wrote the entire testing framework for the service, bringing test coverage from 0% to >80%.`}
 
 const Autodesk1 = {title: "Autodesk", icon: autodeskLogo, shortDescription: "Software Developer Intern", date: "2025",
     longDescription: `Implemented a cycle detection algorithm to ensure batches of commands can be topologically sorted by combining depth first
@@ -65,6 +69,19 @@ const Daedalos = {title: "Daedalos Enrichment Programs", icon: daedalos, shortDe
 
 /** Projects */
 const projects = [
+    {title: "JEPA World Model", links: [{name: "GitHub", page: "https://github.com/kieranparanjpe/world-model-sandbox"}],
+        shortDescription: "Trained JEPA world model.", date: "2026",
+        longDescription: `Trained an action-conditioned JEPA-based world model on various Gymnasium environments, including LunarLander, Humanoid,
+and Walker2d.
+Implemented autoregressive training with a discounted loss function to improve prediction accuracy over longer time horizons.
+Utilised an exponential moving average (EMA) on the target encoder to combat representation collapse.`},
+    {title: "Reinforcement Learning Algorithm Implementation (PPO)", links: [{name: "GitHub", page: "https://github.com/kieranparanjpe/My-RL-Impl"},{name: "Report", page: "https://kieranparanjpe.github.io/My-RL-Impl/report/PPO_Report.pdf"}],
+        shortDescription: "Implemented PPO and trained policies with MuJoCo", date: "2026",
+        longDescription: `Implemented PPO (proximal policy optimisation), achieving successful results in the LunarLander, HalfCheetah, and Humanoid
+gymnasium environments.
+Developed policies for both discrete and continuous action spaces by parameterising the categorical and beta distributions.
+Utilised observation and reward standardisation to stabilise training.
+Wrote a report detailing the implementation and theory behind the project.`},
     {title: "Custom Neural Network", links: [{name: "GitHub", page: "https://github.com/kieranparanjpe/MyNN"},], shortDescription: "Feedforward Neural Network made without any ML libraries", date: "2024",
         longDescription: `I made a custom feed-forward deep neural network without any machine learning libraries - just Python and NumPy.
 
